@@ -1,5 +1,6 @@
 import React from "react";
 import "./Dashboard.css";
+import mainLogo from "../shared/1.png";
 
 const Dashboard = () => {
     return (
@@ -45,9 +46,9 @@ const Dashboard = () => {
             <div className="container-fluid position-relative nav-bar p-0">
                 <div className="position-relative px-lg-5" style={{ zIndex: "9" }}>
                     <nav className="navbar navbar-expand-lg bg-secondary navbar-dark py-3 py-lg-0 pl-3 pl-lg-5">
-                        <a href="" className="navbar-brand">
-                            <h1 className="text-uppercase text-primary mb-1">Ecar</h1>
-                        </a>
+                        {/* <a href="" className="navbar-brand"> */}
+                        <img className="Ecar-logo" src={mainLogo}></img>
+                        {/* // </a> */}
                         <button type="button" className="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                             <span className="navbar-toggler-icon"></span>
                         </button>

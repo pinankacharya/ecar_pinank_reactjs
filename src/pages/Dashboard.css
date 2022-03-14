@@ -313,3 +313,7 @@ h6,
     background: linear-gradient(rgba(28, 30, 50, 0.9), rgba(28, 30, 50, 0.9)), url(/images/bg-banner.jpg);
     background-attachment: fixed;
 }
+
+.Ecar-logo {
+    height: 150px;
+}
