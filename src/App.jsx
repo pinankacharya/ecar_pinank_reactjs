@@ -6,6 +6,8 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Userpost from "./components/Users/components/Userpost";
 import Adminpage from "./pages/Adminpage";
+import Crudmain from "./components/Admin/Crudmain";
+import Admin from "./components/Admin/Admin";
 
 const App = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -17,7 +19,7 @@ const App = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/Userpost" element={<Userpost />} />
-                <Route path="/Adminpage" element={<Adminpage />} />
+                <Route path="/Adminpage" element={<Admin />} />
             </Routes>
         );
     } else {
@@ -26,7 +28,7 @@ const App = () => {
                 {/* <Route path="/" element={<Home />} /> */}
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/Userpost" element={<Userpost />} />
-                <Route path="/Adminpage" element={<Adminpage />} />
+                <Route path="/Adminpage" element={<Admin />} />
             </Routes>
         );
     }
