@@ -5,8 +5,8 @@ import { BrowserRouter as Router, Route, Navigate, Routes } from "react-router-d
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Userpost from "./components/Users/components/Userpost";
-import Adminpage from "./pages/Adminpage";
-import Crudmain from "./components/Admin/Crudmain";
+// import Adminpage from "./pages/Adminpage";
+// import Crudmain from "./components/Admin/Crudmain";
 import Admin from "./components/Admin/Admin";
 
 const App = () => {
