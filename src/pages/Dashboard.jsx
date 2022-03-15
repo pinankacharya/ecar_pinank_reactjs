@@ -1,6 +1,8 @@
 import React from "react";
 import "./Dashboard.css";
 import mainLogo from "../shared/1.png";
+import carbg from "../shared/carousel-1.jpg";
+// import caratwo from "../shared/1.png";
 
 const Dashboard = () => {
     return (
@@ -153,13 +155,13 @@ const Dashboard = () => {
                 <div id="header-carousel" className="carousel slide" data-ride="carousel">
                     <div className="carousel-inner">
                         <div className="carousel-item active">
-                            <img className="w-100" src="/images/carousel-1.jpg" alt="Image" />
+                            <img className="w-100" src={carbg} alt="Image" />
                             <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div className="p-3" style={{ maxWidth: "900px" }}>
                                     <h4 className="text-white text-uppercase mb-md-3">Rent A Car</h4>
-                                    <h1 className="display-1 text-white mb-md-4">Best Rental Cars In Your Location</h1>
+                                    <h1 className="display-1 text-white mb-md-4">Wheels for you ... </h1>
                                     <a href="" className="btn btn-primary py-md-3 px-md-5 mt-2">
-                                        Reserve Now
+                                        Reserve Nowa
                                     </a>
                                 </div>
                             </div>
@@ -169,7 +171,7 @@ const Dashboard = () => {
                             <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div className="p-3" style={{ maxWidth: "900px" }}>
                                     <h4 className="text-white text-uppercase mb-md-3">Rent A Car</h4>
-                                    <h1 className="display-1 text-white mb-md-4">Quality Cars with Unlimited Miles</h1>
+                                    <h1 className="display-1 text-white mb-md-4">Car rental service with smiling prices</h1>
                                     <a href="" className="btn btn-primary py-md-3 px-md-5 mt-2">
                                         Reserve Now
                                     </a>
