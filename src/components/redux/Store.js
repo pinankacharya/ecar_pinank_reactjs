@@ -9,6 +9,6 @@ const rootReducer = combineReducers({
     carsReducer,
 });
 
-const store = createStore(rootReducer, composeEnhancers(applyMiddleware([thunk])));
+const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));
 
 export default store;

@@ -738,13 +738,13 @@ const Dashboard = () => {
                     <div className="col-lg-3 col-md-6 mb-5">
                         <h4 className="text-uppercase text-light mb-4">Get In Touch</h4>
                         <p className="mb-2">
-                            <i className="fa fa-map-marker-alt text-white mr-3"></i>123 Street, New York, USA
+                            <i className="fa fa-map-marker-alt text-white mr-3"></i>Noname Road, Ahmedabad, Gujrat
                         </p>
                         <p className="mb-2">
-                            <i className="fa fa-phone-alt text-white mr-3"></i>+012 345 67890
+                            <i className="fa fa-phone-alt text-white mr-3"></i>+912 345 XXXXX
                         </p>
                         <p>
-                            <i className="fa fa-envelope text-white mr-3"></i>info@example.com
+                            <i className="fa fa-envelope text-white mr-3"></i>Ecar@example.com
                         </p>
                     </div>
                     <div className="col-lg-3 col-md-6 mb-5">
