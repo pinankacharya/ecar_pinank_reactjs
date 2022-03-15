@@ -2,7 +2,7 @@ import React from "react";
 import "./Dashboard.css";
 import mainLogo from "../shared/1.png";
 import carbg from "../shared/carousel-1.jpg";
-// import caratwo from "../shared/1.png";
+import cartwo from "../shared/carousel-2.jpg";
 
 const Dashboard = () => {
     return (
@@ -167,10 +167,10 @@ const Dashboard = () => {
                             </div>
                         </div>
                         <div className="carousel-item">
-                            <img className="w-100" src="src/pages/img/carousel-2.jpg" alt="Image" />
+                            <img className="w-100" src={cartwo} alt="Image" />
                             <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div className="p-3" style={{ maxWidth: "900px" }}>
-                                    <h4 className="text-white text-uppercase mb-md-3">Rent A Car</h4>
+                                    {/* <h4 className="text-white text-uppercase mb-md-3">Rent A Car</h4> */}
                                     <h1 className="display-1 text-white mb-md-4">Car rental service with smiling prices</h1>
                                     <a href="" className="btn btn-primary py-md-3 px-md-5 mt-2">
                                         Reserve Now
