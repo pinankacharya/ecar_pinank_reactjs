@@ -7,7 +7,7 @@ import Dashboard from "./pages/Dashboard";
 import Userpost from "./components/Users/components/Userpost";
 // import Adminpage from "./pages/Adminpage";
 // import Crudmain from "./components/Admin/Crudmain";
-import Admin from "./components/Admin/Admin";
+// import Admin from "./components/Admin/Admin";
 import CarListing from "./pages/CarListing";
 
 const App = () => {
@@ -20,7 +20,7 @@ const App = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/Userpost" element={<Userpost />} />
-                <Route path="/Adminpage" element={<Admin />} />
+                {/* <Route path="/Adminpage" element={<Admin />} /> */}
             </Routes>
         );
     } else {
@@ -29,7 +29,7 @@ const App = () => {
                 {/* <Route path="/" element={<Home />} /> */}
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/Userpost" element={<Userpost />} />
-                <Route path="/Adminpage" element={<Admin />} />
+                {/* <Route path="/Adminpage" element={<Admin />} /> */}
                 <Route path="/Carlist" element={<CarListing />} />
             </Routes>
         );
