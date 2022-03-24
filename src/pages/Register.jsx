@@ -33,13 +33,13 @@ function Register() {
                     <Form layout="vertical" className="login-form p-5" onFinish={onFinish}>
                         <h1>Register</h1>
                         <hr />
-                        <Form.Item name="username" label="Username" rules={[{ required: true }]}>
+                        <Form.Item name="firstName" label="Firstname" rules={[{ required: true }]}>
+                            <Input />
+                        </Form.Item>
+                        <Form.Item name="email" label="Email" rules={[{ required: true }]}>
                             <Input />
                         </Form.Item>
                         <Form.Item name="password" label="Password" rules={[{ required: true }]}>
-                            <Input />
-                        </Form.Item>
-                        <Form.Item name="cpassword" label="Confirm Password" rules={[{ required: true }]}>
                             <Input />
                         </Form.Item>
 
