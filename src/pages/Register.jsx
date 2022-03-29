@@ -67,7 +67,10 @@ function Register() {
                         </Form.Item>
                         <Form.Item name="password" label="Password" rules={[{ required: true }]}>
                             <Input value={password} onChange={(e) => setPassword(e.target.value)} />
+                            <br />
+                            {password.length < 4 ? "must have more than 4 characters" : ""}
                         </Form.Item>
+                        <br />
 
                         <button className="btn1 mt-2 mb-3" onClick={saveUser}>
                             Register
