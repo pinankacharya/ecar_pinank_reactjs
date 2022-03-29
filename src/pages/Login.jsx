@@ -82,6 +82,7 @@ const Login = () => {
                                     setpassword(e.target.value);
                                 }}
                             />
+                            {password.length < 4 ? "must have more than 4 characters" : ""}
                         </div>
 
                         <button type="submit" className="btn btn-primary">
