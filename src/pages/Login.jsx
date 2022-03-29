@@ -1,25 +1,49 @@
-import React from "react";
-import { Row, Col, Form, Input } from "antd";
+import axios from "axios";
+import React, { useState } from "react";
+import { useNavigate } from "react-router";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
 import "../pages/Login.css";
-import { userLogin } from "../components/redux/actions/userActions";
-// import AOS from "aos";
+import { Row, Col, Form, Input } from "antd";
+// import { Default } from "react-toastify/dist/utils";
 
-// import "aos/dist/aos.css"; // You can also use <link> for styles
-// ..
-// AOS.init();
-function Login() {
-    const dispatch = useDispatch();
-    // const { loading } = useSelector((state) => state.alertsReducer);
-    function onFinish(values) {
-        dispatch(userLogin(values));
-        console.log(values);
-    }
+const Login = () => {
+    const [email, setemail] = useState("");
+    const [password, setpassword] = useState("");
+    var navigate = useNavigate();
+
+    const login = async (e) => {
+        e.preventDefault();
+        //api -- > response --> localstorage..
+
+        var data = {
+            email: email,
+            password: password,
+        };
+
+        await axios.post("http://localhost:4000/login", data).then((res) => {
+            if (res.data.status === 200) {
+                localStorage.setItem("email", res.data.data.email);
+                localStorage.setItem("firstName", res.data.data.firstName);
+                // localStorage.setItem("role", res.data.data.role.roleName);
+                toast(res.data.msg);
+                setTimeout(() => {
+                    navigate("/");
+                }, 2000);
+            } else {
+                console.log("here.....");
+                setTimeout(() => {
+                    navigate("/login");
+                }, 2000);
+
+                toast(res.data.msg);
+            }
+        });
+    };
 
     return (
         <div className="login">
-            {/* {loading && <Spinner />} */}
             <Row gutter={16} className="d-flex align-items-center">
                 <Col lg={16} style={{ position: "relative" }}>
                     <img
@@ -30,28 +54,57 @@ function Login() {
                     />
                 </Col>
                 <Col lg={8} className="text-left p-5">
-                    <Form layout="vertical" className="login-form p-5" onFinish={onFinish}>
-                        <h1>Login</h1>
-                        <hr />
-                        {/* <Form.Item name="firstName" label="Firstname" rules={[{ required: true }]}>
-                            <Input />
-                        </Form.Item> */}
-                        <Form.Item name="email" label="Email" rules={[{ required: true }]}>
-                            <Input />
-                        </Form.Item>
-                        <Form.Item name="password" label="Password" rules={[{ required: true }]}>
-                            <Input />
-                        </Form.Item>
+                    <form onSubmit={login}>
+                        <div className="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input
+                                type="email"
+                                className="form-control"
+                                id="exampleInputEmail1"
+                                aria-describedby="emailHelp"
+                                placeholder="Enter email"
+                                onChange={(e) => {
+                                    setemail(e.target.value);
+                                }}
+                            />
+                            <small id="emailHelp" className="form-text text-muted">
+                                We'll never share your email with anyone else.
+                            </small>
+                        </div>
+                        <div className="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input
+                                type="password"
+                                className="form-control"
+                                id="exampleInputPassword1"
+                                placeholder="Password"
+                                onChange={(e) => {
+                                    setpassword(e.target.value);
+                                }}
+                            />
+                        </div>
 
-                        <button className="btn1 mt-2 mb-3">Login</button>
+                        <button type="submit" className="btn btn-primary">
+                            Submit
+                        </button>
+                        <ToastContainer
+                            position="top-right"
+                            autoClose={1800}
+                            hideProgressBar={false}
+                            newestOnTop={false}
+                            closeOnClick
+                            rtl={false}
+                            pauseOnFocusLoss
+                            draggable
+                            pauseOnHover
+                        />
                         <br />
-
                         <Link to="/Register">Click Here to Register</Link>
-                    </Form>
+                    </form>
                 </Col>
             </Row>
         </div>
     );
-}
+};
 
 export default Login;

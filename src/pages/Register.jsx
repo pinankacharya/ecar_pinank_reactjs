@@ -1,20 +1,46 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Row, Col, Form, Input } from "antd";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+// import { useDispatch, useSelector } from "react-redux";
 import "../pages/Register.css";
-import { userRegister } from "../components/redux/actions/userActions";
-// import AOS from "aos";
+import axios from "axios";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
 
-// import "aos/dist/aos.css"; // You can also use <link> for styles
-// ..
-// AOS.init();
 function Register() {
-    const dispatch = useDispatch();
-    // const { loading } = useSelector((state) => state.alertsReducer);
-    function onFinish(values) {
-        dispatch(userRegister(values));
-        console.log(values);
+    // const dispatch = useDispatch();
+    // // const { loading } = useSelector((state) => state.alertsReducer);
+    // function onFinish(values) {
+    //     dispatch(values);
+    //     console.log(values);
+    const [firstName, setfirstName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    // const [toastMsg, setToastMsg] = useState("");
+
+    // useEffect(() => {
+
+    // const notify = () => {
+    //     console.log(toastMsg);
+    //     toast(`${toastMsg}`);
+    // };
+    // }, [toastMsg]);
+
+    // const dispatch = useDispatch();
+    async function saveUser(e) {
+        e.preventDefault();
+        console.warn(firstName, email, password);
+
+        try {
+            const { data, status } = await axios.post("http://localhost:4000/users", { firstName, email, password });
+            console.log(data.msg, status);
+            if (status === 201) toast.success(data.msg);
+            else toast.error(data.msg);
+            // console.log(toastMsg);
+        } catch (error) {
+            toast.error(error.message);
+            console.log(error);
+        }
     }
 
     return (
@@ -30,20 +56,23 @@ function Register() {
                     />
                 </Col>
                 <Col lg={8} className="text-left p-5">
-                    <Form layout="vertical" className="login-form p-5" onFinish={onFinish}>
+                    <Form layout="vertical" className="login-form p-5">
                         <h1>Register</h1>
                         <hr />
-                        <Form.Item name="firstName" label="Firstname" rules={[{ required: true }]}>
-                            <Input />
+                        <Form.Item name="firstName" label="First name" rules={[{ required: true }]}>
+                            <Input value={firstName} onChange={(e) => setfirstName(e.target.value)} required />
                         </Form.Item>
                         <Form.Item name="email" label="Email" rules={[{ required: true }]}>
-                            <Input />
+                            <Input value={email} onChange={(e) => setEmail(e.target.value)} />
                         </Form.Item>
                         <Form.Item name="password" label="Password" rules={[{ required: true }]}>
-                            <Input />
+                            <Input value={password} onChange={(e) => setPassword(e.target.value)} />
                         </Form.Item>
 
-                        <button className="btn1 mt-2 mb-3">Register</button>
+                        <button className="btn1 mt-2 mb-3" onClick={saveUser}>
+                            Register
+                        </button>
+                        <ToastContainer />
                         <br />
 
                         <Link to="/login">Click Here to Login</Link>
