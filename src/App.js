@@ -10,7 +10,7 @@ import Userpost from "./components/Users/components/Userpost";
 // import Crudmain from "./components/Admin/Crudmain";
 // import Admin from "./components/Admin/Admin";
 import CarListing from "./pages/CarListing";
-import { Reddit } from "@mui/icons-material";
+// import { Reddit } from "@mui/icons-material";
 
 const App = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -32,9 +32,7 @@ const App = () => {
                 {/* <Route path="/" element={<Home />} /> */}
                 <Route path="/Login" element={<Login />} />
                 <Route path="/Register" element={<Register />} />
-                {/* <Route exact path="/dashboard" element={<Protected />}> */}
                 <Route path="/" element={<Dashboard />} />
-                {/* </Route> */}
                 <Route path="/Userpost" element={<Userpost />} />
                 {/* <Route path="/Adminpage" element={<Admin />} /> */}
                 <Route path="/Carlist" element={<CarListing />} />
@@ -50,11 +48,3 @@ const App = () => {
 };
 
 export default App;
-
-export function Protected(props) {
-    if (localStorage.getItem("user")) {
-        return <Route {...props} />;
-    } else {
-        return <Navigate to="/Login" replace={true} />;
-    }
-}
