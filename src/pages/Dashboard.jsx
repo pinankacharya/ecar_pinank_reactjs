@@ -3,6 +3,7 @@ import "./Dashboard.css";
 import mainLogo from "../shared/1.png";
 import carbg from "../shared/carousel-1.jpg";
 import cartwo from "../shared/carousel-2.jpg";
+// import { Dashboardfunc } from "../components/Dashboard/Dashboard";
 
 const Dashboard = () => {
     return (

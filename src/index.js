@@ -4,6 +4,8 @@ import "./index.css";
 import App from "./App";
 import store from "./components/redux/Store";
 import { Provider } from "react-redux";
+// import "react-bootstrap.min.js";
+
 // import "bootstrap/dist/css/bootstrap.min.css";
 // import "react-toastify/dist/ReactToastify.css";
 
