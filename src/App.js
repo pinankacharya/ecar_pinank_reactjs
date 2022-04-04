@@ -11,6 +11,7 @@ import Userpost from "./components/Users/components/Userpost";
 // import Crudmain from "./components/Admin/Crudmain";
 // import Admin from "./components/Admin/Admin";
 import CarListing from "./pages/CarListing";
+import Addcar from "./pages/Addcar";
 // import { Reddit } from "@mui/icons-material";
 
 // admin
@@ -22,11 +23,11 @@ const App = () => {
     if (isLoggedIn) {
         routes = (
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/dashboard" element={<Dashboard />} />
+                {/* <Route path="/" element={<Home />} /> */}
+                <Route path="/" element={<Dashboard />} />
                 <Route path="/Userpost" element={<Userpost />} />
                 <Route path="/Carlist" element={<CarListing />} />
-                {/* <Route path="/Adminpage" element={<Admin />} /> */}
+                <Route path="/Admin" element={<Adminpage />} />
             </Routes>
         );
     } else {
@@ -35,11 +36,12 @@ const App = () => {
                 {/* <Route path="/" element={<Home />} /> */}
                 <Route path="/Login" element={<Login />} />
                 <Route path="/Register" element={<Register />} />
-                <Route path="/Admin" element={<Adminpage />} />
+                {/* <Route path="/Admin" element={<Adminpage />} /> */}
                 <Route path="/" element={<Dashboard />} />
-                <Route path="/Userpost" element={<Userpost />} />
+                {/* <Route path="/Userpost" element={<Userpost />} /> */}
                 {/* <Route path="/Adminpage" element={<Admin />} /> */}
-                <Route path="/Carlist" element={<CarListing />} />
+                {/* <Route path="/Carlist" element={<CarListing />} /> */}
+                <Route path="Addcar" element={<Addcar />} />
             </Routes>
         );
     }
