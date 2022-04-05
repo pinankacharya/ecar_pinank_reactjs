@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useDispatch, useSelector } from "react";
 import { Row, Col, Form, Input, Button } from "antd";
 import axios from "axios";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
+// import { addCar } from "../components/redux/actions/carsActions";
 
 function Addcar() {
     const [name, setName] = useState("");
@@ -12,6 +13,9 @@ function Addcar() {
     const [price, setPrice] = useState("");
 
     async function Addcar(e) {
+        // const dispatch = useDispatch();
+        // const { loading } = useSelector((state) => state.alert.alertReducer);
+
         e.preventDefault();
         console.warn(name, platNumber, ChasisNumber, capacity, price);
 
