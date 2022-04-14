@@ -21,7 +21,7 @@ const Login = () => {
             email: email,
             password: password,
         };
-
+        //fetching
         await axios.post("http://localhost:4000/login", data).then((res) => {
             if (res.data.status === 200) {
                 localStorage.setItem("email", res.data.data.email);
